@@ -1,3 +1,205 @@
 @tailwind base;
+
+@layer base {
+    h1 {
+      @apply text-2xl;
+    }
+    h2 {
+      @apply text-xl;
+    }
+    h3 {
+      @apply text-lg;
+    }
+    a {
+      @apply text-blue-600 underline;
+    }
+  }
+
 @tailwind components;
 @tailwind utilities;
+
+/* Global Styles */
+/* button {
+  background: #102e6a;
+  color: white;
+  padding: 10px 45px;
+  border-radius: 35px;
+} */
+
+body {
+  min-height: 100vh;
+  /* border: 1px solid red; */
+}
+
+/* MAin Styles */
+
+.hero-container {
+  display: flex;
+  margin-top: 100px;
+  margin-inline: 100px;
+  gap: 50px;
+  /* min-height: 80vh; */
+  /* border: 1px solid red; */
+}
+
+.hero-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.hero-header .hero-header-title h1 {
+  font-weight: 600;
+  font-size: 5rem;
+  line-height: 1;
+}
+
+/* .hero-header .hero-header-title {
+  flex:9;
+} */
+
+.hero-header .hero-header-body {
+  margin-bottom: 50px;
+}
+
+.hero-header .hero-header-body p {
+  /* text-align: justify; */
+  color: #3b4b4b;
+  font-size: 1.2rem;
+}
+
+.hero-header .hero-header-body p:first-child{
+  margin-bottom: 20px;
+}
+
+.hero-header .hero-header-footer {
+  margin-bottom: 60px;
+}
+
+.hero-header .hero-header-footer button {  
+  background: #102e6a;
+  color: white;
+  padding: 10px 45px;
+  border-radius: 35px;
+
+}
+
+#email-sent-message {
+  padding: 10px 45px;
+  color: #cd4930;
+  animation: shake 2s 2 linear;
+}
+
+.hero-container .hero-image {
+  width: 80%;
+}
+
+.hero-container .hero-image img {
+  border-radius: 5%;
+}
+
+/* DIALOG */
+
+dialog::backdrop {
+  /* background-color: #aa37205e; */
+  background-color: #aa3720ee;
+}
+
+.hero-modal {
+  /* border: 1px solid red; */
+  padding: 50px 150px;
+  background-color: #f0f5fae5;
+  border-radius: 20px;
+}
+
+.hero-modal .hero-input-message {
+  display: none;
+}
+
+.hero-modal .hero-input-message-on {
+  position: absolute;
+  background-color: #cd1913;
+  padding: 5px 15px;
+  border-radius: 7px;
+  color: #eeeef1;
+  bottom: 15px;
+  left: 200px;
+}
+
+
+.hero-modal .hero-modal-form {
+  /* border: 1px solid red !important; */
+  display: flex;
+  align-items: center;
+}
+
+.hero-modal .hero-modal-form label{
+  margin-right: 5px;
+}
+
+.hero-modal .hero-modal-form input{
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+
+.hero-modal .hero-modal-form .hero-form-submit-btn {
+  background: #102e6a;
+  color: white;
+  padding: 10px 25px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+
+.hero-modal .hero-modal-form .hero-form-input-info {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: #cd1913;
+  width: 44px;
+  height: 44px;
+  /* height: 10px; */
+  margin-inline: 10px;
+}
+
+.hero-modal-form .hero-form-input-info .hero-form-input-info-container {
+  position: absolute;
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+}
+
+#pulse {
+  animation: pulse 2s 5 ease-in-out;
+}
+
+.hero-modal-form .hero-form-input-info .hero-form-input-info-icon {
+  cursor: pointer;
+  color: white;
+  z-index: 1;
+}
+
+#shake {
+  animation: shake 2s 5 linear;
+}
+
+
+@keyframes pulse {
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: scale(2) rotate(15deg);
+  }
+  50% {
+    transform: scale(2) rotate(-15deg);
+  }
+}
+
+

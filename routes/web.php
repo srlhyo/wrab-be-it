@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('wrabbit-welcome');
 });
+// dd("hey I am coming from web route");
+// Route::post('/send-welcome-email', 'App\Http\Controllers\EmailController@sendWelcomeEmail')->name('send-email');
+Route::post("/send-email", "App\Http\Controllers\RegisterController@sendEmail")->name("send-email");
 
 Route::middleware([
     'auth:sanctum',
