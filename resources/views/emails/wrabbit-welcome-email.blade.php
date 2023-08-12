@@ -12,14 +12,18 @@ The {{ $companyName }} Team
 @endcomponent --}}
 
 @component('mail::message')
-# Welcome to My Website
+# Welcome to Wrabbit
 
-Thank you for registering! Click the button below to complete your registration:
+Hey, hey! 
 
-@component('mail::button', ['url' => route('register')])
-Register
+Click the link below to login to Wrabbit app:
+@component('mail::subcopy')
+    <a href="{{ $magicLink }}" style="color: #000000;">
+        Click Magic Link to Login
+    </a>
 @endcomponent
-
+<br>
+<br>
 Thanks,<br>
 {{ config('app.name') }}
 @endcomponent

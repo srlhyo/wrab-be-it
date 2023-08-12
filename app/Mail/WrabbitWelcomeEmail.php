@@ -13,18 +13,16 @@ class WrabbitWelcomeEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name;
-    public $companyName;
+    public $magicLink;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name = "", $companyName = "")
+    public function __construct($maginLink)
     {
-        $this->name = $name;
-        $this->companyName = $companyName;
+        $this->magicLink = $maginLink;
     }
 
     // /**

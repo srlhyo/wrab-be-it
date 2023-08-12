@@ -13,12 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('wrabbit-welcome');
+// Route::get('/', function () {
+//     return view('wrabbit-welcome');
+// });
+
+Route::get('/', 'App\Http\Controllers\RegisterController@index')->name('/');
+
+Route::post("/generate-magic-link", "App\Http\Controllers\RegisterController@generateMagicLink")->name("generate-magic-link");
+
+Route::get('/magic-link-login', 'App\Http\Controllers\RegisterController@loginWithMagicLink')->name('magic-link-login');
+
+Route::post('/create-user', 'App\Http\Controllers\RegisterController@createUser')->name('create-user');
+Route::get('/provide-name', 'App\Http\Controllers\RegisterController@provideName')->name('provide-name');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/in-login', 'App\Http\Controllers\RegisterController@inLogin')->name('in-login');
+    Route::get('/in-logout', 'App\Http\Controllers\RegisterController@inLogout')->name('in-logout');
 });
-// dd("hey I am coming from web route");
-// Route::post('/send-welcome-email', 'App\Http\Controllers\EmailController@sendWelcomeEmail')->name('send-email');
-Route::post("/send-email", "App\Http\Controllers\RegisterController@sendEmail")->name("send-email");
 
 Route::middleware([
     'auth:sanctum',
