@@ -9,15 +9,24 @@ Alpine.plugin(focus);
 Alpine.start();
 
 
-const magicLinkBtn = document.querySelector('#magic-link-btn');
-const loadingSpinner = document.querySelector('.loading-spinner');
 
 
-// loading spinner
-magicLinkBtn.addEventListener("click", function () {
-    console.log("heeee")
-    loadingSpinner.style.display = "block";   
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     const createUser = document.querySelector('#createUser');
+//     const modal = document.querySelector('[data-modal]');
+    
+
+
+//     if(createUser.value == "") {
+//         modal.showModal()
+//     }
+
+//     modal.addEventListener('keydown', function(event) {
+//         if(event.key == "Escape") {
+//             event.preventDefault();
+//         }
+//     })
+// })
 
 // let myTitle = document.getElementById("my-title");
 // console.log("my title", myTitle);

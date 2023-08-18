@@ -67,7 +67,7 @@ body {
   content: "";
   width: 35%;
   height: 1px;
-  border: 2px solid black;
+  border: 2px solid #CB245B;
   bottom: -6px;
   transition: width .1s;
 }
@@ -90,7 +90,8 @@ body {
 }
 
 .email-errors,
-.email-fail {
+.email-fail,
+.modal-errors {
   color: #cb245b;
   background: #f9e6ec;
 }
@@ -150,7 +151,7 @@ main {
   content: "";
   width: 35%;
   height: 1px;
-  border: 2px solid black;
+  border: 2px solid #CB245B;
   bottom: -6px;
   transition: width .1s;
 }
@@ -194,7 +195,7 @@ main {
 
 .left-col .cta-btns button {
   display: flex;
-  background-color: #322E2E;
+  background-color: #CB245B;
   color: #e6e6e6;
   width: 54%;
   border: 1px solid black;
@@ -294,3 +295,194 @@ main {
   transform: scale(1.05); 
 }
 
+
+
+/* Login Page */
+
+.login-user {
+  display: none;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+  height: 100%;
+  font-size: 2.5rem;
+  gap: 10px;
+}
+
+/* Display success message */
+.login-user .email-success {
+  font-size: unset;
+  position: unset;
+  bottom: unset;
+  left: unset;
+  padding: .5rem;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.login-user .email-success {
+  color: #195133;
+  background: #dbf0e1;
+}
+
+
+/* Model */
+
+.create-user-modal {
+  position: relative;
+  width: 74.7em;
+  height: 43.2em;
+  border-radius: 5px;
+  box-shadow: 10px 10px 25px 0px rgba(153,126,135,0.49) 
+}
+
+.create-user-modal::backdrop {
+  background-color: #9797978c;
+}
+
+.modal-wrapper {
+  width: 62.8em;
+  height: 32.4em;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+  /* text-align: center;   */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
+  letter-spacing: .1em;
+  margin-top: 70px;
+}
+
+.modal-wrapper h2 {
+  font-size: 2.6rem;
+  font-weight: lighter; 
+  color: #B79AA3;
+}
+
+.modal-wrapper h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #333131;
+}
+
+.modal-wrapper input,
+.modal-wrapper button {
+  font-size: 1.6rem;
+}
+
+.modal-wrapper button {
+  font-weight: bold;
+  border: 1px solid; 
+}
+
+.modal-wrapper form {
+  display: flex;
+  /* width: 36.9em; */
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Modal Form */
+
+.modal-wrapper form input,
+.modal-wrapper form button {
+  border-radius: 5px;
+  padding-inline: 1em;
+  padding-block: .4em;
+  font-size: 1.6rem;
+  align-self: center;
+}
+
+.modal-wrapper form button {
+  display: flex;
+  background-color: #CB245B;
+  color: #e6e6e6;
+  /* width: 54%; */
+  border: 1px solid black;
+  justify-content: space-between;
+  transition: all .1s;
+  gap: 10px;
+}
+
+.modal-wrapper form button:hover {
+  background-color: #e6e6e6;
+  color: #322E2E;
+}
+
+/* .modal-wrapper form:hover button svg {
+  fill: #322E2E;
+} */
+
+.modal-wrapper form input {
+  flex: 1;
+  /* width: 70%; */
+  border: 1px solid black;
+}
+
+.modal-wrapper form input::placeholder {
+  font-weight: 300;
+  color: #c9abb4;
+  border: 1px;
+}
+
+.modal-wrapper form button span {
+  text-transform: uppercase;
+  
+  font-weight: bold;
+}
+
+.modal-wrapper form button svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: #e6e6e6;
+  transition: all .1s;
+}
+
+.modal-wrapper form button:hover svg {
+  fill: #322E2E;
+}
+
+
+/* Modal Content */
+
+.modal-wrapper .modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+}
+
+.modal-wrapper .first-name-info .thank-icon {
+  width: 50px;
+}
+
+.modal-wrapper .first-name-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 29px;
+}
+
+/* Close Modal */
+
+.close-modal {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+.close-modal button {
+  outline: none;
+}
+
+/* Modal Errors */
+
+.modal-errors {
+  font-size: 1.2rem;
+  position: absolute;
+  left: 20.5rem;
+  bottom: 14rem;
+  padding: .5rem;
+  border-radius: 5px;
+}

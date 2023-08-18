@@ -26,7 +26,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">About us</a></li>
                     </ul>
                 </nav>
             </header>
@@ -96,5 +96,15 @@
             <div class="space" style="margin-top: 5em"></div>
         </div>
     </div>
+    <script>
+        const magicLinkBtn = document.querySelector('#magic-link-btn');
+        const loadingSpinner = document.querySelector('.loading-spinner');
+
+        // loading spinner
+        magicLinkBtn.addEventListener("click", function () {
+            console.log("heeee")
+            loadingSpinner.style.display = "block";
+        })
+    </script>
 </body>
 </html>

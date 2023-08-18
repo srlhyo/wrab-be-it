@@ -14,6 +14,7 @@ class WrabbitWelcomeEmail extends Mailable
     use Queueable, SerializesModels;
 
     public $magicLink;
+    
 
     /**
      * Create a new message instance.
@@ -23,6 +24,7 @@ class WrabbitWelcomeEmail extends Mailable
     public function __construct($maginLink)
     {
         $this->magicLink = $maginLink;
+    
     }
 
     // /**

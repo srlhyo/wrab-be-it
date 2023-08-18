@@ -18,8 +18,12 @@ use Illuminate\Support\Str;
 class RegisterController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
+        if($request->get("close_button") == "close modal") {
+            session()->flash('fail', 'Ops! Go back to INBOX and click magic link');
+        }
+
         return view('wrabbit-welcome');
     }
 
@@ -63,85 +67,70 @@ class RegisterController extends Controller
 
         // find user based on the email provided
         $user = User::where("email", $email)->first();
-
-        // dd("does exist", $user);
-
+        
         if(!$user) {
-            return view("provide-name", ["data" => $data->all()]);
-        }
 
-        // update users token and hash
-        $user->update($data->except("email", "create_user_token")->all());
+            // create user
+            $user = User::create([
+                'email' => $email,
+                'magic_link_token' => $data['magic_link_token'],
+                'magic_link_hash' => $data['magic_link_hash']
+            ]);
+
+        }else {
+            // update users token and hash
+            $user->update($data->except("email", "create_user_token")->all());
+        }
 
         // Combine the encrypted token and hash for verification
         $magicLink = route('magic-link-login', [
-            'email' => $user->email,
-            'magic_link_token' => $user->magic_link_token, 
-            'magic_link_hash' => $user->magic_link_hash
+            'email' => $data['email'],
+            'magic_link_token' => $data['magic_link_token'],
+            'magic_link_hash' => $data['magic_link_hash']
         ]);
 
         // send email
         Mail::to($email)->send(new WrabbitWelcomeEmail($magicLink));
 
         return redirect()->back()->with([
-            "success" => "Email sent -> see INBOX!"
+            "success" => "Email sent. Check your INBOX!"
         ]);
     }
 
 
     public function createUser(Request $request) {
-
         $rules = [
-            'name' => 'required|alpha|min:4|max:15',
+            'name' => 'required|regex:/^[a-zA-Z]+$/|min:4|max:15',
             'create_user_token' => 'required|in:impossible',
-            'magic_link_token' => 'required',
-            'magic_link_hash' => 'required',
-            'email' => 'email',
-            // Other validation rules
         ];
 
         $messages = [
             'create_user_token.in' => 'Ops! You must SEND MAGIC LINK from HomePage',
-            // Other custom error messages
+            'name.regex' => 'only letters and only first name',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
-
-        // check for validation errors
+   
         if($validator->fails()) {
 
-            return redirect()->route('provide-name')
-                         ->withErrors($validator)
-                         ->with('data', $request->all());
+
+            return response()->json(["error" => $validator->errors()], 400)
+            ->header("Content-Type", "application/json");
         }
 
         $validated = $validator->safe()->except([
             "create_user_token"
         ]);
 
-        // create user
-        $user = User::create($validated);
+       
+        $user = Auth::user();
 
-        // Combine the encrypted token and hash for verification
-        $magicLink = route('magic-link-login', [
-            'magic_link_token' => $user->magic_link_token, 
-            'magic_link_hash' => $user->magic_link_hash, 
-            'email' => $user->email]);
+        // cteate name to user
+        $user->update($validated);
 
-        // send email
-        Mail::to($user->email)->send(new WrabbitWelcomeEmail($magicLink));
-
-        return redirect()->route('/')->with([
-            "success" => "Email sent -> see INBOX!"
-        ]);
+        return response()->json(["success" => "login"])
+                ->header("Content-Type", "application/json");
     }
-
-
-    public function provideName(Request $request) {
-        $data = $request->session()->get('data');
-        return view('provide-name', ["data" => $data]);
-    }
-
 
     public function inLogin() {
         return view('in-login');
@@ -161,6 +150,7 @@ class RegisterController extends Controller
             'magic_link_token' => 'required',
             'magic_link_hash' => 'required',
             'email' => 'email',
+            'create_user' => 'boolean',
             // Other validation rules
         ];
 
@@ -185,9 +175,11 @@ class RegisterController extends Controller
                     ->where('email', $validator->getData()['email'])
                     ->first();
 
+        // dd("hey", $user);
+
         if(!$user) {
             return redirect()->route('/')->with([
-                "fail" => "Ops! You must SEND MAGIC LINK"
+                "fail" => "You need to send Magic link in order to login",
             ]);
         }
     
@@ -199,7 +191,10 @@ class RegisterController extends Controller
         $user->save();
 
         return redirect()->route('in-login')->with([
-            "success" => "You are logged in. Congratulations!"
+            "success" => "You are logged in. Congratulations!",
+            "name" => $user->name,  
+            // "email" => $user->email,
+            // "id" => $user->id
         ]);
     }
 

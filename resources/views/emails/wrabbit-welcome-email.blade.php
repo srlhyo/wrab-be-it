@@ -21,6 +21,8 @@ Click the link below to login to Wrabbit app:
     <a href="{{ $magicLink }}" style="color: #000000;">
         Click Magic Link to Login
     </a>
+
+    @dd($magicLink)
 @endcomponent
 <br>
 <br>
