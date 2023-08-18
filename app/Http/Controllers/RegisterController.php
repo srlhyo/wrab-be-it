@@ -128,7 +128,7 @@ class RegisterController extends Controller
         // cteate name to user
         $user->update($validated);
 
-        return response()->json(["success" => "login"])
+        return response()->json(["success" => "login", "name" => $user->name])
                 ->header("Content-Type", "application/json");
     }
 
@@ -192,9 +192,7 @@ class RegisterController extends Controller
 
         return redirect()->route('in-login')->with([
             "success" => "You are logged in. Congratulations!",
-            "name" => $user->name,  
-            // "email" => $user->email,
-            // "id" => $user->id
+            "name" => $user->name
         ]);
     }
 

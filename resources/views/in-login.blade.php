@@ -19,7 +19,7 @@
 <body>
     <input type="hidden" id="createUser" name="createUser" value="{{ session('name')}}">
     <dialog data-modal class="create-user-modal">
-        <form class="close-modal" action="{{ route('/') }}" method="dialog">
+        <form class="close-modal" action="{{ route('/') }}" method="GET">
             @csrf
             <input type="hidden" name="close_button" value="close modal">
             <button>
@@ -82,7 +82,7 @@
     </dialog>
     <div class="login-user">
         <div class="email-success">
-            <ul>
+            <ul id="success-list">
                 <li>You are logged in. Congratulations!</li>
             </ul>
         </div>
@@ -95,6 +95,10 @@
         const formErrors = document.querySelector('.modal-errors')
         const ulErrors = formErrors.querySelector('ul')
         const loginUser = document.querySelector('.login-user')
+        // Create a new <li> element
+        const newLi = document.createElement("li");
+        const strongli = document.createElement("strong")
+        const emLi = document.createElement("em")
 
 
         form.addEventListener("submit", function(event) {
@@ -119,6 +123,22 @@
                     
                     if(response.ok) {
                         modal.close()
+
+                        emLi.textContent = `${formData.get('name')}`
+
+                        emLi.style.textTransform = "uppercase"
+                        
+                        strongli.appendChild(emLi)
+                        
+                        newLi.textContent = "Hello, "; // Set the text content for the new <li>
+
+                        newLi.appendChild(strongli)
+
+                        // Get the <ul> element
+                        const ulElement = document.querySelector("#success-list");
+
+                        // Insert the new <li> element as the first child of the <ul>
+                        ulElement.insertBefore(newLi, ulElement.firstChild);
                         loginUser.style.display = "flex"
                     } else {
                         console.log("Server Error: ", data.error)
@@ -141,6 +161,8 @@
 
         if(createUser.value == "") {
             modal.showModal()
+        } else {
+            loginUser.style.display = "flex"
         }
 
         modal.addEventListener('keydown', function(event) {
