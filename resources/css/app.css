@@ -297,9 +297,145 @@ main {
 
 
 
-/* Login Page */
+/***** Login Page *****/
 
-.login-user {
+.logout-wrapper {
+  display: flex;
+  gap: 130px;
+  align-self: center;
+}
+
+.profile-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.profile-wrapper p {
+  align-self: center;
+  /* font-weight: lighter; */
+  /* font-size: 1.9rem; */
+}
+
+.profile-wrapper .avatar {
+  width: 4.4rem;
+  border-radius: 50%;
+  border: 2px solid #cb245b;
+  overflow: hidden;
+  height: 4.4rem;
+}
+
+.logout-wrapper nav ul li a {
+  font-size: 1.6rem;
+}
+
+
+.profile-details h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.my-gallery h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.profile-edit-details {
+  display: flex;
+  gap: 15px;
+}
+
+.profile-edit-details .avatar {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #cb245b;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-details .details {
+  font-size: 1.6rem;
+}
+
+.profile-edit-details {
+  margin-top: 70px;
+}
+
+.details {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.profile-details .details span {
+  font-weight: bold;
+}
+
+.profile-edit-details button {
+  border-radius: 5px;
+  padding-inline: .7em;
+  padding-block: .2em;
+  font-size: 1.2rem;
+  align-self: center;
+  display: flex;
+  background-color: #CB245B;
+  color: #e6e6e6;
+  width: 43%;
+  border: 1px solid black;
+  justify-content: space-between;
+  transition: all .1s;
+}
+
+.profile-edit-details button:hover {
+  background-color: #e6e6e6;
+  color: #322E2E;
+}
+
+
+.profile-edit-details button span {
+  text-transform: uppercase;
+  
+  font-weight: bold;
+}
+
+.profile-edit-details button svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #e6e6e6;
+  transition: all .1s;
+}
+
+.profile-edit-details button:hover svg {
+  fill: #322E2E;
+}
+
+.my-gallery {
+  text-align: center;
+}
+
+.my-gallery .gallery-photos {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  margin-top: 70px;
+}
+
+.my-gallery .gallery-photos .col-top,
+.my-gallery .gallery-photos .col-bottom {
+  display: flex;
+  gap: 28px;
+}
+
+.my-gallery .gallery-photos .box {
+  background-color: #8a8888;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 5px;
+  border: 2px solid #cb245b;
+}
+
+
+/* .login-user {
   display: none;
   flex-direction: column;
   margin-top: 50px;
@@ -307,10 +443,10 @@ main {
   height: 100%;
   font-size: 2.5rem;
   gap: 10px;
-}
+} */
 
 /* Display success message */
-.login-user .email-success {
+/* .login-user .email-success {
   font-size: unset;
   position: unset;
   bottom: unset;
@@ -323,15 +459,16 @@ main {
 .login-user .email-success {
   color: #195133;
   background: #dbf0e1;
-}
+} */
 
 
-/* Model */
+/* Modal */
 
 .create-user-modal {
   position: relative;
-  width: 74.7em;
-  height: 43.2em;
+  padding-inline: 4em;
+  /* width: 67em; */
+  /* height: 43.2em; */
   border-radius: 5px;
   box-shadow: 10px 10px 25px 0px rgba(153,126,135,0.49) 
 }
@@ -341,17 +478,18 @@ main {
 }
 
 .modal-wrapper {
-  width: 62.8em;
-  height: 32.4em;
+  /* width: 60em; */
+  /* height: 32.4em; */
   margin: 0 auto;
   /* border: 1px solid red; */
   /* text-align: center;   */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 55px;
+  gap: 70px;
   letter-spacing: .1em;
   margin-top: 70px;
+  margin-bottom: 30px;
 }
 
 .modal-wrapper h2 {
@@ -449,12 +587,12 @@ main {
 .modal-wrapper .modal-content {
   display: flex;
   flex-direction: column;
-  gap: 47px;
+  gap: 20px;
 }
 
-.modal-wrapper .first-name-info .thank-icon {
+/* .modal-wrapper .first-name-info .thank-icon {
   width: 50px;
-}
+} */
 
 .modal-wrapper .first-name-info {
   display: flex;
