@@ -1,0 +1,36 @@
+    git init: Initializes a new Git repository in the current directory.
+
+    git clone <url>: Copies a Git repository from a hosted URL to your local machine.
+
+    git status: Displays modified files in the current directory.
+
+    git log: Shows your commit history.
+
+    git add -A: Adds changed files into your next commit (stages them).
+
+    git commit -m 'your message': Commits your changes with a specified message.
+
+    git pull origin main: Retrieves up-to-date changes from the main branch.
+
+    git push origin main: Pushes your changes to the main branch.
+
+    git branch: Lists all local branches on your machine.
+
+    git merge develop: Merges the develop branch into the current one.
+
+    git branch <branch-name>: Creates a new branch with the specified name.
+
+    git checkout <branch-name>: Switches from the current branch to the specified one.
+
+    git branch -m <new-branch-name>: Renames the current branch.
+
+    git branch -d <branch-name>: Deletes the specified branch.
+
+    git rm <file-name>: Removes a file from the project and stages its removal.
+
+    git stash: Saves modified and staged changes for later use.
+
+    git diff <branch-A-name>...<branch-B-name>: Shows what is in <branch-A-name> but not in <branch-B-name>.
+
+    git rebase <branch-name>: Puts commits of the current branch ahead of <branch-name>.
+
