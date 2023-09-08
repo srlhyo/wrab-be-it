@@ -8,7 +8,7 @@
 <style>
     h6 {
         color: black;
-        background: yellow;
+        background: blue;
     }
 </style>
 <body>
