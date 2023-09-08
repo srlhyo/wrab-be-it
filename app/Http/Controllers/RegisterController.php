@@ -28,6 +28,12 @@ class RegisterController extends Controller
     }
 
 
+    public function footer(Request $request)
+    {
+
+        return view('vitor-footer');
+    }
+
     public function generateMagicLink(Request $request)
     {
         // validate inputs
