@@ -13,60 +13,54 @@
                     <div class="sitemap">
                         <div class="flexcontainer">
                             <p class="text">
-                                <span class="text-wrapper">Home<br /></span>
-                            </p>
-                            <p class="text">
-                                <span class="text-wrapper">Abouts<br /></span>
-                            </p>
-                            <p class="text">
-                                <span class="text-wrapper">Services<br /></span>
-                            </p>
-                            <p class="text">
-                                <span class="text-wrapper">Merchants<br /></span>
-                            </p>
-                            <p class="text"><span class="text-wrapper">Contact</span></p>
+                                <nav class="sitemap">
+                                    <ul class="sitemap-list">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Abouts</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">Merchants</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="div">Sitemap</div>
+                            </div>
+                            <!-- This section contains links to social media profiles -->
+                            <div class="socials">
+                                <div class="flexcontainer-2">
+                                    <ul class="social-media">
+                                        <li><a href="#">Facebook</a></li>
+                                        <li><a href="#">Linkedin</a></li>
+                                        <li><a href="#">Instagram</a></li>
+                                        <li><a href="#">Twitter</a></li>
+                                    </ul>
+                                </div>
+                                <div class="text-wrapper-2">Socials</div>
+                            </div>
+                            <!-- This section contains the company's address -->
+                            <div class="head-office">
+                                <p class="p">Xilliams Corner Wine © 2017. 1112 A Market St # Ste B22, Charlottesville, CA 45565</p>
+                                <div class="text-wrapper-2">Head Office</div>
+                            </div>
+                            <p class="text-wrapper-3">© 2020 Lift Media. All rights reserved.</p>
+                            <!-- This section contains contact information -->
+                            <div class="mail-contact">
+                                <div class="text-wrapper-4">contact@lift.agency</div>
+                                <img class="line" src="img/image.svg" />
+                                <div class="text-wrapper-5">(123) 456-7890</div>
+                                <img class="img" src="img/line-15.svg" />
+                            </div>
                         </div>
-                        <div class="div">Sitemap</div>
-                    </div>
-                    <!-- This section contains links to social media profiles -->
-                    <div class="socials">
-                        <div class="flexcontainer-2">
-                            <p class="span-wrapper">
-                                <span class="span">Facebook<br /></span>
-                            </p>
-                            <p class="span-wrapper">
-                                <span class="span">Linkedin<br /></span>
-                            </p>
-                            <p class="span-wrapper">
-                                <span class="span">Instagram<br /></span>
-                            </p>
-                            <p class="span-wrapper"><span class="span">Twitter</span></p>
+                        <!-- This section contains an up-arrow icon -->
+                        <div class="up-arrow">
+                            <div class="overlap-group">
+                                <div class="ellipse"></div>
+                                <img class="arrow-left" src="img/arrow-left-1.svg" />
+                            </div>
                         </div>
-                        <div class="text-wrapper-2">Socials</div>
-                    </div>
-                    <!-- This section contains the company's address -->
-                    <div class="head-office">
-                        <p class="p">Xilliams Corner Wine © 2017. 1112 A Market St # Ste B22, Charlottesville, CA 45565</p>
-                        <div class="text-wrapper-2">Head Office</div>
-                    </div>
-                    <p class="text-wrapper-3">© 2020 Lift Media. All rights reserved.</p>
-                    <!-- This section contains contact information -->
-                    <div class="mail-contact">
-                        <div class="text-wrapper-4">contact@lift.agency</div>
-                        <img class="line" src="img/image.svg" />
-                        <div class="text-wrapper-5">(123) 456-7890</div>
-                        <img class="img" src="img/line-15.svg" />
+                        <!-- This section contains a company logo -->
+                        <img class="dif-logo" src="img/dif-logo.svg" />
                     </div>
                 </div>
-                <!-- This section contains an up-arrow icon -->
-                <div class="up-arrow">
-                    <div class="overlap-group">
-                        <div class="ellipse"></div>
-                        <img class="arrow-left" src="img/arrow-left-1.svg" />
-                    </div>
-                </div>
-                <!-- This section contains a company logo -->
-                <img class="dif-logo" src="img/dif-logo.svg" />
             </div>
         </div>
     </div>
@@ -143,28 +137,33 @@
         letter-spacing: 0;
         line-height: 22px;
     }
-/* Styling for the social media links section within the footer */
-.footer-dark .socials {
-    position: absolute;
-    width: 78px;
-    height: 181px;
-    top: 0;
-    left: 521px;
-}
 
-/* Styling for the container of social media links */
-.footer-dark .flexcontainer-2 {
-    width: 73px;
-    height: 133px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    position: absolute;
-    top: 48px;
-    left: 1px;
-}
+    /* Styling for the social media links section within the footer */
+    .footer-dark .socials {
+        position: absolute;
+        width: 78px;
+        height: 181px;
+        top: 0;
+        left: 521px;
+    }
 
+    /* Styling for the container of social media links */
+    .footer-dark .flexcontainer-2 {
+        width: 73px;
+        height: 133px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        position: absolute;
+        top: 48px;
+        left: 1px;
+    }
+
+    /* Styling for individual social media link text */
+    .footer-dark .span-wrapper {
+        position: relative;
+        align-self: stretch;
 /* Styling for individual social media link text */
 .footer-dark .span-wrapper {
     position: relative;
