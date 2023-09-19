@@ -22,20 +22,20 @@
                 <div class="sitemap">
                     <h2>sitemap</h2>
                     <ul>
-                        <li>home</li>
-                        <li>About</li>
-                        <li>Growers</li>
-                        <li>Merchants</li>
-                        <li>Contact</li>
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Growers</a></li>
+                        <li><a href="#">Merchants</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
                 <div class="socials">
                     <h2>Socials</h2>
                     <ul>
-                        <li>Facebook</li>
-                        <li>Linkedin</li>
-                        <li>Instagram</li>
-                        <li>Twitter</li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
                     </ul>
                 </div>
                 <div class="adress">
