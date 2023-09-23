@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+                footer {
+                    width: 1440px;
+                    height: 562px;
+                    flex-shrink: 0;
+                    border-radius: 10px; 
+                    background: #CB245B; 
+                }
+            </style>
+        </head>
+            
+    </style>
 </head>
 <body>
     <nav>
@@ -50,7 +62,6 @@
                     <p>© 2020 Lift Media. All rights reserved</p>
                 </div>
             </div>
-                
         </div>
     </footer>
 </body>
