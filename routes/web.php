@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\RegisterController@index')->name('/');
 
+Route::get('/', 'App\Http\Controllers\RegisterController@footer')->name('/vitor-footer');
+
 Route::post("/generate-magic-link", "App\Http\Controllers\RegisterController@generateMagicLink")->name("generate-magic-link");
 
 Route::get('/magic-link-login', 'App\Http\Controllers\RegisterController@loginWithMagicLink')->name('magic-link-login');
